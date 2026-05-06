@@ -71,7 +71,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-[240px_1fr]">
           <div className="overflow-hidden rounded-[26px] p-2 glass-card">
             <img
-              src="/images/hero.png"
+              src="/images/Hero.png"
               alt="Krunal Baldha portrait"
               className="h-[260px] w-full rounded-[22px] object-cover sm:h-[300px] lg:h-full"
             />
