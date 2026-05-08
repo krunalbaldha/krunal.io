@@ -1,5 +1,7 @@
 'use client'
 
+import Magnetic from '@/components/ui/Magnetic';
+
 const navLinks = [
   { label: 'Home', href: '#home', id: 'home' },
   { label: 'Work', href: '#work', id: 'work' },
@@ -59,9 +61,11 @@ export default function Header({ activeSection, scrolled }: HeaderProps) {
         </nav>
 
         {/* CTA */}
-        <button className="rounded-full border border-[#d8ddea] bg-white px-4 py-2 text-[13px] font-medium text-black shadow-sm transition hover:bg-[#f0f4ff] hover:border-indigo-200 hover:text-[#3d5aff] sm:px-5 sm:text-[14px]">
-          <a href="#contact">Let&apos;s Connect</a>
-        </button>
+        <Magnetic>
+          <button className="hover-gradient-border rounded-full border border-[#d8ddea] bg-white px-4 py-2 text-[13px] font-medium text-black shadow-sm transition hover:bg-[#f0f4ff] hover:border-indigo-200 hover:text-[#3d5aff] sm:px-5 sm:text-[14px]">
+            <a href="#contact">Let&apos;s Connect</a>
+          </button>
+        </Magnetic>
       </div>
     </header>
   );

@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import CursorGlow from "@/components/ui/CursorGlow";
+import Noise from "@/components/ui/Noise";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const outfit = Outfit({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -30,8 +38,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full scroll-smooth antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#080B14] text-white">{children}</body>
+    <html lang="en" className={`${plusJakartaSans.variable} ${outfit.variable} h-full scroll-smooth antialiased`}>
+      <body className="min-h-full flex flex-col bg-[#080B14] text-white">
+        <Noise />
+        <CursorGlow />
+        {children}
+      </body>
     </html>
   );
 }

@@ -73,7 +73,7 @@ export default function ContactSection() {
                       rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="rounded-[12px] bg-[#1f2937] px-4 py-2 text-[13px] font-medium
                                  text-white shadow-[0_4px_0_rgba(15,20,35,0.25)] transition
-                                 hover:-translate-y-0.5 sm:rounded-[14px] sm:text-[14px]"
+                                 hover:scale-[1.02] sm:rounded-[14px] sm:text-[14px]"
                     >
                       {action.text}
                     </a>

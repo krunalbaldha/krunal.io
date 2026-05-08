@@ -1,3 +1,5 @@
+import Magnetic from '@/components/ui/Magnetic';
+
 const aboutStats = [
   {
     title: '2+ Years in Product',
@@ -26,6 +28,7 @@ const expertiseTags = [
   'Roadmap Planning',
   'Feature Prioritisation',
   'PRD & User Stories',
+  'Product Discovery',
   'Agile / Scrum',
   'Sprint Planning',
   'Backlog Grooming',
@@ -57,7 +60,7 @@ const toolLogos = [
   // { name: 'Monday.com', logo: 'https://cdn.simpleicons.org/monday.com' },
   { name: 'Notion', logo: 'https://cdn.simpleicons.org/notion' },
   { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/google' },
-  // { name: 'Mixboard', logo: 'https://cdn.simpleicons.org/mixboard' },
+  { name: 'Directus', logo: 'https://cdn.simpleicons.org/directus' },
   { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman' },
 ] as const;
 
@@ -102,13 +105,15 @@ export default function AboutSection() {
               usability, and product quality.
             </p> */}
 
-            <a
-              href="/resume/Krunal%20Baldha%20-%20PM%20Main%20.pdf"
-              download="Krunal Baldha - Resume.pdf"
-              className="mt-7 inline-block rounded-[16px] border border-white/60 px-6 py-3 text-[16px] font-medium text-[#2b2b35] shadow-[0_6px_0_rgba(43,43,53,0.10)] transition hover:-translate-y-0.5 glass-badge"
-            >
-              Download Resume
-            </a>
+            <Magnetic>
+              <a
+                href="/resume/Krunal%20Baldha%20-%20PM%20Main%20.pdf"
+                download="Krunal Baldha - Resume.pdf"
+                className="hover-gradient-border mt-7 inline-block rounded-[16px] border border-white/60 px-6 py-3 text-[16px] font-medium text-[#2b2b35] shadow-[0_6px_0_rgba(43,43,53,0.10)] transition hover:scale-[1.02] glass-badge"
+              >
+                Download Resume
+              </a>
+            </Magnetic>
           </div>
         </div>
 

@@ -15,7 +15,7 @@ const productTags = [
   { name: 'Livvy', type: 'Project' },
   { name: 'Literaliga', type: 'Project' },
   { name: 'Ride & Stride', type: 'Project' },
-  { name: 'Gotham Med', type: 'Project' },
+  { name: 'Gothammed', type: 'Project' },
   { name: 'ABC', type: 'Project' },
 ] as const;
 
@@ -124,7 +124,7 @@ export default function WorkSection() {
                   aria-label="Scroll left"
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-200
                     ${canLeft
-                      ? 'border-indigo-200 bg-white text-indigo-600 shadow-sm hover:shadow-md hover:-translate-y-0.5'
+                      ? 'border-indigo-200 bg-white text-indigo-600 shadow-sm hover:shadow-md hover:scale-[1.02]'
                       : 'border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed'
                     }`}
                 >
@@ -163,7 +163,7 @@ export default function WorkSection() {
                         title={item.type}
                         style={{ width: PILL_W, minWidth: PILL_W }}
                         className={`shrink-0 flex items-center justify-center gap-1 rounded-full py-1.5
-                          text-[12px] font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md
+                          text-[12px] font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-md
                           ${item.type === 'Product'
                             ? 'border border-indigo-200 bg-white text-indigo-600 shadow-[0_2px_10px_rgba(99,102,241,0.18)]'
                             : 'border border-teal-200  bg-white text-teal-600  shadow-[0_2px_10px_rgba(20,184,166,0.18)]'
@@ -187,7 +187,7 @@ export default function WorkSection() {
                   aria-label="Scroll right"
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-200
                     ${canRight
-                      ? 'border-indigo-200 bg-white text-indigo-600 shadow-sm hover:shadow-md hover:-translate-y-0.5'
+                      ? 'border-indigo-200 bg-white text-indigo-600 shadow-sm hover:shadow-md hover:scale-[1.02]'
                       : 'border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed'
                     }`}
                 >
@@ -224,6 +224,10 @@ export default function WorkSection() {
                 Coordinated placement drives for 500+ students and improved workflow efficiency by
                 35% through scheduling, communication, and operational support.
               </p>
+              <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
+                Coordinated placement drives for 500+ students and improved workflow efficiency by
+                35% through scheduling, communication, and operational support.
+              </p>
             </div>
 
             <div className="rounded-[28px] p-6 glass-card sm:p-7">
@@ -237,6 +241,10 @@ export default function WorkSection() {
               <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
                 Developed Python backend services, REST APIs, and SQL optimizations, reducing API
                 latency by 25% and improving scalability for client-facing applications.
+              </p>
+              <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
+                Coordinated placement drives for 500+ students and improved workflow efficiency by
+                35% through scheduling, communication, and operational support.
               </p>
             </div>
 

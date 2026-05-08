@@ -1,5 +1,8 @@
 'use client'
 
+import Magnetic from "@/components/ui/Magnetic";
+import SmoothCounter from "@/components/ui/SmoothCounter";
+
 export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden pt-[72px]">
@@ -51,22 +54,26 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <button className="rounded-full px-7 py-3 text-[14px] font-semibold text-[#21304f] transition hover:-translate-y-0.5 glass-badge">
-              <a href="#work">View Projects</a>
-            </button>
+            <Magnetic>
+              <button className="hover-gradient-border rounded-full px-7 py-3 text-[14px] font-semibold text-[#21304f] transition hover:scale-[1.02] glass-badge">
+                <a href="#work">View Projects</a>
+              </button>
+            </Magnetic>
           </div>
 
           {/* Stats */}
           <div className="mt-8 flex items-center gap-6 sm:gap-8">
             {[
-              { value: '15+', label: 'Projects Delivered' },
-              { value: '5★', label: 'Client Satisfaction' },
-              { value: '2+', label: 'Years in Product' },
+              { value: 15, suffix: '+', label: 'Projects Delivered' },
+              { value: 5, suffix: '★', label: 'Client Satisfaction' },
+              { value: 2, suffix: '+', label: 'Years in Product' },
             ].map((s, i) => (
               <div key={s.label} className="flex items-center gap-6 sm:gap-8">
                 {i > 0 && <div className="h-8 w-px bg-white/50" />}
                 <div>
-                  <p className="text-[22px] font-bold tracking-[-0.04em] text-[#17233f]">{s.value}</p>
+                  <p className="text-[22px] font-bold tracking-[-0.04em] text-[#17233f]">
+                    <SmoothCounter value={s.value} suffix={s.suffix} />
+                  </p>
                   <p className="mt-0.5 text-[12px] text-[#6c7894]">{s.label}</p>
                 </div>
               </div>
@@ -204,15 +211,15 @@ export default function HeroSection() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '10px',
-                background: 'rgba(255,255,255,0.92)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 100%)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
                 borderRadius: '18px',
                 padding: '10px 14px',
                 minWidth: '172px',
                 boxShadow:
-                  '0 2px 4px rgba(82,100,210,0.05), 0 8px 24px rgba(82,100,210,0.13), 0 20px 40px rgba(82,100,210,0.08), 0 1px 0 rgba(255,255,255,0.95) inset',
-                border: '1px solid rgba(255,255,255,0.88)',
+                  '0 4px 6px -1px rgba(82,100,210,0.06), 0 12px 24px -4px rgba(82,100,210,0.12), 0 24px 48px -12px rgba(82,100,210,0.08), inset 0 1px 1px rgba(255,255,255,0.98), inset 1px 0 1px rgba(255,255,255,0.6), inset -1px 0 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.5)',
               }}
             >
               {/* Avatar */}
@@ -264,15 +271,15 @@ export default function HeroSection() {
           >
             <div
               style={{
-                background: 'rgba(255,255,255,0.92)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 100%)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
                 borderRadius: '18px',
                 padding: '12px 14px',
                 minWidth: '186px',
                 boxShadow:
-                  '0 2px 4px rgba(82,100,210,0.05), 0 8px 24px rgba(82,100,210,0.13), 0 20px 40px rgba(82,100,210,0.08), 0 1px 0 rgba(255,255,255,0.95) inset',
-                border: '1px solid rgba(255,255,255,0.88)',
+                  '0 4px 6px -1px rgba(82,100,210,0.06), 0 12px 24px -4px rgba(82,100,210,0.12), 0 24px 48px -12px rgba(82,100,210,0.08), inset 0 1px 1px rgba(255,255,255,0.98), inset 1px 0 1px rgba(255,255,255,0.6), inset -1px 0 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.5)',
               }}
             >
               {/* Card header */}
@@ -344,15 +351,15 @@ export default function HeroSection() {
                 width: '52px',
                 height: '52px',
                 borderRadius: '50%',
-                background: 'rgba(255,255,255,0.96)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.8) 100%)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 boxShadow:
-                  '0 2px 4px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.10), 0 16px 32px rgba(0,0,0,0.06), 0 1px 0 rgba(255,255,255,0.98) inset',
-                border: '1.5px solid rgba(240,240,255,0.95)',
+                  '0 4px 6px -1px rgba(0,0,0,0.04), 0 12px 24px -4px rgba(0,0,0,0.10), 0 24px 48px -12px rgba(0,0,0,0.06), inset 0 1px 1px rgba(255,255,255,0.98), inset 1px 0 1px rgba(255,255,255,0.6), inset -1px 0 1px rgba(255,255,255,0.2)',
+                border: '1px solid rgba(255,255,255,0.6)',
               }}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

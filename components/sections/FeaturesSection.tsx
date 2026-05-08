@@ -33,7 +33,7 @@ export default function FeaturesSection() {
               className="group flex flex-col items-start feature-card-anim"
               style={{ animationDelay: card.delay }}
             >
-              <div className="mb-5 flex h-[52px] w-[52px] items-center justify-center text-[#7aa13b] transition-transform duration-300 group-hover:-translate-y-1">
+              <div className="mb-5 flex h-[52px] w-[52px] items-center justify-center text-[#7aa13b] transition-transform duration-300 group-hover:scale-[1.02]">
                 <img src={card.icon} alt={card.alt} className="h-[46px] w-[46px] object-contain" />
               </div>
               <h3 className="max-w-[300px] text-[24px] font-semibold leading-[1.18] tracking-[-0.03em] text-[#1d2333] lg:text-[26px]">

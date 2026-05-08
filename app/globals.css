@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-inter);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -104,7 +104,7 @@
   }
 
   body {
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-sans), system-ui, sans-serif;
     color: var(--foreground);
     /*
      * Apple-style deep mesh gradient — fixed so every section shares the same
@@ -127,6 +127,15 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), system-ui, sans-serif;
   }
 }
 
@@ -190,127 +199,131 @@
 
 /* ── Standard glass card (Regular Material) ── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.56);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.35) 100%);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
-  /* Layered border: outer prismatic edge + inner top specular highlight */
-  border: 1px solid rgba(255, 255, 255, 0.68);
+  /* Layered soft border + inner highlight */
+  border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
-    /* Ambient depth shadow */
-    0 2px 4px rgba(82, 100, 210, 0.04),
-    0 8px 24px rgba(82, 100, 210, 0.08),
-    0 24px 48px rgba(82, 100, 210, 0.06),
-    /* Top specular edge — the #1 Apple glass tell */
-    0 1px 0 rgba(255, 255, 255, 0.85) inset,
-    /* Bottom inner shadow for depth */
-    0 -1px 0 rgba(82, 100, 210, 0.04) inset;
+    /* Layered ambient depth shadows */
+    0 4px 6px -1px rgba(82, 100, 210, 0.05),
+    0 12px 24px -4px rgba(82, 100, 210, 0.1),
+    0 24px 48px -12px rgba(82, 100, 210, 0.08),
+    /* 3D inner highlights (top, left, right, bottom) */
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 1px 0 1px rgba(255, 255, 255, 0.4),
+    inset -1px 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.1);
   transition:
-    background 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    border-color 0.35s ease;
+    background 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.2s ease-out;
 }
 
 /* ── Elevated / hero-level glass panel (Thick Material) ── */
 .glass-card-strong {
-  background: rgba(255, 255, 255, 0.68);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%);
   backdrop-filter: saturate(200%) blur(40px);
   -webkit-backdrop-filter: saturate(200%) blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow:
-    /* Deep ambient */
-    0 4px 8px rgba(82, 100, 210, 0.05),
-    0 12px 32px rgba(82, 100, 210, 0.10),
-    0 32px 64px rgba(82, 100, 210, 0.08),
-    0 64px 96px rgba(82, 100, 210, 0.04),
-    /* Specular top highlight */
-    0 1px 0 rgba(255, 255, 255, 0.96) inset,
-    /* Left specular edge */
-    1px 0 0 rgba(255, 255, 255, 0.50) inset,
-    /* Inner depth */
-    0 -1px 0 rgba(82, 100, 210, 0.06) inset;
+    0 6px 10px -2px rgba(82, 100, 210, 0.06),
+    0 20px 40px -8px rgba(82, 100, 210, 0.12),
+    0 40px 80px -16px rgba(82, 100, 210, 0.10),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 1px 0 1px rgba(255, 255, 255, 0.5),
+    inset -1px 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.15);
   transition:
-    background 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    border-color 0.4s ease;
+    background 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.25s ease-out;
 }
 
 /* ── Pill / badge glass (Ultra-Thin Material) ── */
 .glass-badge {
-  background: rgba(255, 255, 255, 0.74);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%);
   backdrop-filter: saturate(160%) blur(16px);
   -webkit-backdrop-filter: saturate(160%) blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow:
-    0 2px 8px rgba(82, 100, 210, 0.06),
-    0 4px 16px rgba(82, 100, 210, 0.05),
-    0 1px 0 rgba(255, 255, 255, 0.90) inset;
+    0 2px 4px -1px rgba(82, 100, 210, 0.06),
+    0 8px 16px -4px rgba(82, 100, 210, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 1px 0 1px rgba(255, 255, 255, 0.3);
   transition:
-    background 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
-    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* ── Hover states — spring-physics lift ── */
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.70);
-  border-color: rgba(255, 255, 255, 0.88);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%);
+  border-color: rgba(255, 255, 255, 0.6);
   box-shadow:
-    0 4px 8px rgba(82, 100, 210, 0.06),
-    0 16px 40px rgba(82, 100, 210, 0.13),
-    0 40px 72px rgba(82, 100, 210, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    1px 0 0 rgba(255, 255, 255, 0.45) inset,
-    0 -1px 0 rgba(82, 100, 210, 0.05) inset;
-  transform: translateY(-3px);
+    0 8px 12px -2px rgba(82, 100, 210, 0.08),
+    0 24px 48px -8px rgba(82, 100, 210, 0.15),
+    0 48px 72px -24px rgba(82, 100, 210, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95),
+    inset 1px 0 2px rgba(255, 255, 255, 0.5),
+    inset -1px 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
 }
 
 .glass-card-strong:hover {
-  background: rgba(255, 255, 255, 0.78);
-  border-color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+  border-color: rgba(255, 255, 255, 0.7);
   box-shadow:
-    0 6px 12px rgba(82, 100, 210, 0.07),
-    0 20px 48px rgba(82, 100, 210, 0.14),
-    0 48px 80px rgba(82, 100, 210, 0.09),
-    0 80px 112px rgba(82, 100, 210, 0.04),
-    0 1px 0 rgba(255, 255, 255, 0.98) inset,
-    1px 0 0 rgba(255, 255, 255, 0.55) inset,
-    0 -1px 0 rgba(82, 100, 210, 0.07) inset;
-  transform: translateY(-4px);
+    0 10px 16px -4px rgba(82, 100, 210, 0.08),
+    0 32px 64px -12px rgba(82, 100, 210, 0.16),
+    0 64px 128px -24px rgba(82, 100, 210, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.98),
+    inset 1px 0 2px rgba(255, 255, 255, 0.6),
+    inset -1px 0 1px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
 }
 
 .glass-badge:hover {
-  background: rgba(255, 255, 255, 0.86);
-  border-color: rgba(255, 255, 255, 0.95);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.02);
   box-shadow:
-    0 4px 12px rgba(82, 100, 210, 0.10),
-    0 1px 0 rgba(255, 255, 255, 0.96) inset;
+    0 4px 8px -2px rgba(82, 100, 210, 0.08),
+    0 12px 24px -6px rgba(82, 100, 210, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95),
+    inset 1px 0 2px rgba(255, 255, 255, 0.4);
 }
 
 /* ── Header vibrancy variant ── */
 /* Apply .glass-vibrancy on the header nav pill for the frosted dock feel */
 .glass-vibrancy {
-  background: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.58) 100%);
   backdrop-filter: saturate(210%) blur(44px);
   -webkit-backdrop-filter: saturate(210%) blur(44px);
-  border: 1px solid rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow:
-    0 2px 4px rgba(82, 100, 210, 0.04),
-    0 8px 28px rgba(82, 100, 210, 0.10),
-    0 24px 56px rgba(82, 100, 210, 0.07),
-    0 1px 0 rgba(255, 255, 255, 0.98) inset,
-    1px 0 0 rgba(255, 255, 255, 0.50) inset;
+    0 2px 4px -1px rgba(82, 100, 210, 0.04),
+    0 12px 24px -6px rgba(82, 100, 210, 0.10),
+    0 32px 64px -16px rgba(82, 100, 210, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.98),
+    inset 1px 0 1px rgba(255, 255, 255, 0.4),
+    inset -1px 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.1);
   transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .glass-vibrancy.scrolled {
-  background: rgba(255, 255, 255, 0.80);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.65) 100%);
   box-shadow:
-    0 4px 8px rgba(82, 100, 210, 0.06),
-    0 12px 36px rgba(82, 100, 210, 0.14),
-    0 1px 0 rgba(255, 255, 255, 0.98) inset;
+    0 4px 8px -2px rgba(82, 100, 210, 0.06),
+    0 16px 32px -8px rgba(82, 100, 210, 0.14),
+    inset 0 1px 2px rgba(255, 255, 255, 0.98),
+    inset 1px 0 1px rgba(255, 255, 255, 0.5);
 }
 
 /* ── Glow utilities ── */
@@ -475,11 +488,11 @@
 
 /* Card hover glow — spring physics */
 .card-hover {
-  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .card-hover:hover {
-  transform: translateY(-5px) scale(1.01);
+  transform: scale(1.02);
   box-shadow: 0 20px 60px rgba(82, 100, 210, 0.18), 0 0 0 1px rgba(139, 92, 246, 0.22);
 }
 
@@ -522,13 +535,13 @@
 
 /* Feature cards: animate once on load, stay visible */
 .feature-card-anim {
-  animation: fadeUp 0.7s ease forwards;
+  animation: fadeUp 0.4s ease-out forwards;
   opacity: 0;
 }
 
 /* Case-study image fade */
 .case-study-img-anim {
-  animation: fadeInSoft 0.55s ease both;
+  animation: fadeInSoft 0.25s ease-out both;
 }
 
 /* Marquee tracks */
@@ -558,4 +571,28 @@
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+/* ── Premium Micro Details ── */
+.hover-gradient-border {
+  position: relative;
+}
+
+.hover-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(59, 130, 246, 0.8), rgba(139, 92, 246, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hover-gradient-border:hover::before {
+  opacity: 1;
 }

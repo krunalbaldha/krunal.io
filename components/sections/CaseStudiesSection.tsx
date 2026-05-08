@@ -107,7 +107,7 @@ export default function CaseStudiesSection() {
                   height: '6px',
                   borderRadius: '100px',
                   background: active === i ? '#6f8cff' : 'rgba(111,140,255,0.25)',
-                  transition: 'all 0.35s cubic-bezier(0.34,1.56,0.64,1)',
+                  transition: 'all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   padding: 0,
@@ -153,7 +153,7 @@ export default function CaseStudiesSection() {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.32, ease: 'easeOut' }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
                 >
                   {/* Eyebrow + Coming Soon badge */}
                   <div className="flex flex-wrap items-center gap-3">
@@ -272,10 +272,10 @@ export default function CaseStudiesSection() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`image-wrapper-${active}`}
-                    initial={{ opacity: 0, scale: 0.95, rotate: -2, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, rotate: 2, y: -10 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    initial={{ opacity: 0, scale: 0.98, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.98, y: -10 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
                     className="flex h-full w-full items-center justify-center"
                   >
                     <motion.img
@@ -283,7 +283,7 @@ export default function CaseStudiesSection() {
                       alt={study.title}
                       animate={{ y: [0, -12, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.02 }}
                       className="h-[200px] w-auto cursor-pointer object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.08)] sm:h-[240px] lg:h-[280px]"
                     />
                   </motion.div>
@@ -306,7 +306,7 @@ export default function CaseStudiesSection() {
               <button
                 type="button"
                 onClick={goPrev}
-                className="flex h-9 w-9 items-center justify-center rounded-full text-[#3b4a6b] transition hover:-translate-y-0.5 glass-card"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-[#3b4a6b] transition hover:scale-[1.02] glass-card"
                 aria-label="Previous case study"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -317,7 +317,7 @@ export default function CaseStudiesSection() {
               <button
                 type="button"
                 onClick={goNext}
-                className="flex h-9 w-9 items-center justify-center rounded-full text-[#3b4a6b] transition hover:-translate-y-0.5 glass-card"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-[#3b4a6b] transition hover:scale-[1.02] glass-card"
                 aria-label="Next case study"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
