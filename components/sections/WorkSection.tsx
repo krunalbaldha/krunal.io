@@ -20,10 +20,11 @@ const productTags = [
 ] as const;
 
 const apmPoints = [
-  'Defined product roadmap, PRDs, and feature requirements for SaaS platforms',
-  'Collaborated with design, engineering, and QA teams for Agile delivery',
-  'Analyzed user behavior and metrics to drive data-backed decisions',
-  'Ensured product quality through manual and automation testing practices',
+  'Led feature execution from ideation to launch across multiple SaaS products.',
+  'Conducted user and market research to improve prioritization and product decisions.',
+  'Collaborated closely with design, engineering, and QA teams to deliver high-impact experiences.',
+  'Managed sprint planning, backlog grooming, and Agile workflows for faster execution.',
+  'Improved release quality through structured QA validation and automation support.',
 ] as const;
 
 // Each pill is ~96 px wide + 8 px gap → 5 visible = 5 * (96 + 8) - 8 = 512 px
@@ -94,9 +95,7 @@ export default function WorkSection() {
             </div>
 
             <p className="mt-5 text-[15px] leading-[1.85] text-[#586177]">
-              Spearheaded product development across Vepaar, Pagemaker, Voliz, and Everest while
-              driving feature work from ideation to launch through research, prioritization, Agile
-              delivery, and quality validation.
+              Leading product execution across SaaS platforms including Vepaar, Pagemaker, Voliz, and Everest, driving initiatives from discovery to delivery through research, collaboration, and Agile execution.
             </p>
 
             {/* ── Slider ── */}
@@ -199,14 +198,18 @@ export default function WorkSection() {
             </div>
 
             {/* Bullet points */}
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <ul className="mt-7 flex flex-col gap-3.5">
               {apmPoints.map((point) => (
-                <div key={point} className="flex items-start gap-3 rounded-[18px] px-4 py-3.5 glass-card">
-                  <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#6f8cff]" />
-                  <p className="text-[14px] leading-[1.7] text-[#47536d]">{point}</p>
-                </div>
+                <li key={point} className="group flex items-start gap-3.5 transition-all hover:translate-x-1">
+                  <span className="mt-[3px] flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-[#eef2ff] shadow-sm ring-1 ring-[#e0e7ff] transition-colors group-hover:bg-[#e0e7ff] group-hover:ring-[#c7d2fe]">
+                    <svg className="h-[12px] w-[12px] text-[#5b75da]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <p className="text-[14.5px] leading-[1.7] text-[#47536d]">{point}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           {/* ══ Right: Other roles ══ */}
@@ -221,13 +224,20 @@ export default function WorkSection() {
               </h3>
               <p className="mt-1 text-[14px] font-medium text-[#31415f]">LJ University · Volunteer</p>
               <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
-                Coordinated placement drives for 500+ students and improved workflow efficiency by
-                35% through scheduling, communication, and operational support.
+                Managed placement operations and coordination workflows for 500+ students while improving communication efficiency and operational execution.
               </p>
-              <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
-                Coordinated placement drives for 500+ students and improved workflow efficiency by
-                35% through scheduling, communication, and operational support.
-              </p>
+              <ul className="mt-3 flex flex-col gap-2">
+                {[
+                  'Improved placement workflow efficiency by 35%.',
+                  'Coordinated scheduling, communication, and recruiter operations.',
+                  'Increased participation through streamlined event execution.',
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-2.5 text-[14px] leading-[1.7] text-[#586177]">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#6f8cff]/70" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="rounded-[28px] p-6 glass-card sm:p-7">
@@ -239,13 +249,20 @@ export default function WorkSection() {
               </h3>
               <p className="mt-1 text-[14px] font-medium text-[#31415f]">Identiq InfoTech</p>
               <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
-                Developed Python backend services, REST APIs, and SQL optimizations, reducing API
-                latency by 25% and improving scalability for client-facing applications.
+                Built backend services and APIs focused on scalability, optimization, and performance improvements for client-facing applications.
               </p>
-              <p className="mt-4 text-[14px] leading-[1.85] text-[#586177]">
-                Coordinated placement drives for 500+ students and improved workflow efficiency by
-                35% through scheduling, communication, and operational support.
-              </p>
+              <ul className="mt-3 flex flex-col gap-2">
+                {[
+                  'Reduced API latency by 25% through backend optimization.',
+                  'Developed scalable Python services and REST APIs.',
+                  'Collaborated with product and QA teams for smoother SDLC delivery.',
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-2.5 text-[14px] leading-[1.7] text-[#586177]">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#6f8cff]/70" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>
