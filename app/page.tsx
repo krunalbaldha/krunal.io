@@ -6,10 +6,12 @@ import Header from '@/components/sections/Header';
 import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import WorkSection from '@/components/sections/WorkSection';
-// import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
+import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
 import HighlightsSection from '@/components/sections/HighlightsSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ContactSection from '@/components/sections/ContactSection';
+import Footer from '@/components/sections/Footer';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const NAV_IDS = ['home', 'about', 'work', 'contact'] as const;
 
@@ -33,7 +35,7 @@ export default function HomePage() {
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
-        { threshold: 0.3 },
+        { threshold: 0.25, rootMargin: '-80px 0px 0px 0px' },
       );
       obs.observe(el);
       observers.push(obs);
@@ -46,15 +48,18 @@ export default function HomePage() {
     <>
       <Header activeSection={activeSection} scrolled={scrolled} />
 
-      <main className="min-h-screen overflow-hidden bg-[#f3f5fb]">
+      <main id="main-content" className="min-h-screen overflow-hidden">
         <HeroSection />
         <FeaturesSection />
         <WorkSection />
-        {/* <CaseStudiesSection /> */}
+        <CaseStudiesSection />
         <HighlightsSection />
         <AboutSection />
         <ContactSection />
       </main>
+
+      <Footer />
+      <ScrollToTop />
     </>
   );
 }

@@ -2,17 +2,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Vepaar Case Study – Boosting Product Adoption | Krunal Baldha',
+  title: 'Voliz Case Study – Increasing User Engagement | Krunal Baldha',
   description:
-    'How I redesigned onboarding and simplified key user flows at Vepaar to reduce friction and improve activation, resulting in higher user retention and feature adoption.',
+    'How I leveraged product analytics and user behavior insights to optimize user journeys and boost engagement rates on the Voliz SaaS platform.',
 };
 
-export default function VepaarCaseStudy() {
+export default function VolizCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#f3f5fb] text-[#1e293b] px-4 py-24 sm:px-5 lg:px-6 selection:bg-[#3d5aff]/20">
+    <main className="min-h-screen bg-[#f3f5fb] text-[#1e293b] px-4 py-24 sm:px-5 lg:px-6 selection:bg-[#ec4899]/20">
       {/* Ambient background glows */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-[10%] left-[-15%] h-[600px] w-[600px] rounded-full bg-[#3d5aff]/4 blur-[160px]" />
+        <div className="absolute top-[10%] left-[-15%] h-[600px] w-[600px] rounded-full bg-[#ec4899]/4 blur-[160px]" />
         <div className="absolute top-[40%] right-[-15%] h-[600px] w-[600px] rounded-full bg-[#a78bfa]/4 blur-[140px]" />
       </div>
 
@@ -20,50 +20,50 @@ export default function VepaarCaseStudy() {
         {/* Back link */}
         <Link
           href="/#case-studies"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-[14px] font-semibold text-[#475569] shadow-sm transition-all duration-300 hover:bg-[#3d5aff] hover:text-white hover:border-[#3d5aff] hover:scale-[1.02]"
+          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-[14px] font-semibold text-[#475569] shadow-sm transition-all duration-300 hover:bg-[#ec4899] hover:text-white hover:border-[#ec4899] hover:scale-[1.02]"
         >
           ← Back to Portfolio
         </Link>
 
         {/* Header Hero Section */}
         <div className="mt-10">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6f8cff]">
-            Vepaar · SaaS · Growth
+          <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#ec4899]">
+            Voliz · SaaS · Engagement
           </p>
           <h1 className="mt-4 text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-[#18233f] sm:text-[46px] lg:text-[54px]">
-            Boosting Product Adoption with Onboarding &amp; UX Optimization
+            Increasing User Engagement through Data-Driven Product Decisions
           </h1>
           <p className="mt-4 text-[17px] leading-[1.65] text-[#5b657c] font-medium max-w-[800px]">
-            Redesigning onboarding structures and simplifying setup flows to optimize time-to-value milestones for business users.
+            Leveraging product analytics and user behavior insights to optimize user journeys and boost active response metrics.
           </p>
 
           {/* Key Metrics Grid in Hero */}
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div className="rounded-[20px] p-5 glass-card shadow-sm">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Activation Rate</span>
-              <p className="mt-1 text-[22px] font-bold text-[#6f8cff]">+35%</p>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Active Engagement</span>
+              <p className="mt-1 text-[22px] font-bold text-[#ec4899]">+28%</p>
             </div>
             <div className="rounded-[20px] p-5 glass-card shadow-sm">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Timeline</span>
-              <p className="mt-1 text-[22px] font-bold text-[#a78bfa]">3 Months</p>
+              <p className="mt-1 text-[22px] font-bold text-[#a78bfa]">4 Months</p>
             </div>
             <div className="rounded-[20px] p-5 glass-card shadow-sm">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Time-to-Value</span>
-              <p className="mt-1 text-[22px] font-bold text-[#34d399]">-20%</p>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Completion Rate</span>
+              <p className="mt-1 text-[22px] font-bold text-[#34d399]">+15%</p>
             </div>
             <div className="rounded-[20px] p-5 glass-card shadow-sm">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">User Retention</span>
-              <p className="mt-1 text-[22px] font-bold text-[#e11d48]">+15%</p>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Creation Time</span>
+              <p className="mt-1 text-[22px] font-bold text-[#e11d48]">&lt;45s</p>
             </div>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-2.5">
-            {['Onboarding', 'UX Optimization', 'Activation', 'Retention'].map((tag) => (
+            {['Product Analytics', 'User Behavior', 'Engagement', 'UX'].map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12.5px] font-semibold text-[#6f8cff] bg-[#6f8cff]/5 border border-[#6f8cff]/10 hover:bg-[#6f8cff]/10 hover:border-[#6f8cff]/20 transition-all duration-300 shadow-sm cursor-default"
+                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12.5px] font-semibold text-[#ec4899] bg-[#ec4899]/5 border border-[#ec4899]/10 hover:bg-[#ec4899]/10 hover:border-[#ec4899]/20 transition-all duration-300 shadow-sm cursor-default"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#6f8cff] shadow-[0_0_6px_#6f8cff]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ec4899] shadow-[0_0_6px_#ec4899]" />
                 {tag}
               </span>
             ))}
@@ -79,13 +79,13 @@ export default function VepaarCaseStudy() {
             <div 
               className="absolute inset-0 opacity-40 blur-[60px] pointer-events-none"
               style={{
-                background: `radial-gradient(circle, #6f8cff 0%, transparent 70%)`
+                background: `radial-gradient(circle, #ec4899 0%, transparent 70%)`
               }}
             />
             <div className="relative h-[85%] w-[85%] z-10">
               <Image
-                src="/images/blogs/1.png"
-                alt="Vepaar Case Study"
+                src="/images/blogs/2.png"
+                alt="Voliz Case Study"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 1000px"
@@ -102,33 +102,33 @@ export default function VepaarCaseStudy() {
             {/* The Challenge */}
             <section className="p-6 sm:p-8 rounded-[24px] glass-card-strong hover:scale-[1.005] transition duration-300">
               <h2 className="text-[22px] font-bold text-[#18233f] flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff] text-[15px] font-bold">1</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899] text-[15px] font-bold">1</span>
                 The Challenge
               </h2>
               <p className="mt-5 text-[15.5px] leading-[1.8] text-[#5b657c]">
-                Vepaar, a growing business platform, was experiencing high drop-off rates during the initial user setup. Users found the configuration process overwhelming, leading to lower activation rates and delayed time-to-value for small and medium-sized businesses (SMBs).
+                Voliz, an interactive polling and feedback SaaS platform, was struggling to maintain consistent user engagement. Response rates were dropping, and users were finding the process of creating polls friction-filled. This resulted in low poll completion rates and user churn.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="p-5 rounded-2xl glass-card border-red-500/10 hover:border-red-500/20">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-red-500 bg-red-500/5 px-2 py-1 rounded">Problem 1</span>
-                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Onboarding Drop-offs</h4>
+                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Engagement Decline</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    New users frequently abandoned the platform during the first setup steps.
+                    Real-time polling response rates had dropped, causing survey creators to lose interest.
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl glass-card border-red-500/10 hover:border-red-500/20">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-red-500 bg-red-500/5 px-2 py-1 rounded">Problem 2</span>
-                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Delayed Time-to-Value</h4>
+                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Creation Friction</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    It took too long for users to set up a functional profile and see initial value.
+                    The setup wizard was cluttered, requiring users to fill out complex forms for simple polls.
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl glass-card border-red-500/10 hover:border-red-500/20">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-red-500 bg-red-500/5 px-2 py-1 rounded">Problem 3</span>
-                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Setup Complexity</h4>
+                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">High Drop-offs</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    The overwhelming amount of customizable features left users confused on startup.
+                    Users frequently abandoned the poll creation flow halfway through, increasing overall churn.
                   </p>
                 </div>
               </div>
@@ -137,33 +137,33 @@ export default function VepaarCaseStudy() {
             {/* My Role & Approach */}
             <section className="p-6 sm:p-8 rounded-[24px] glass-card-strong hover:scale-[1.005] transition duration-300">
               <h2 className="text-[22px] font-bold text-[#18233f] flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff] text-[15px] font-bold">2</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899] text-[15px] font-bold">2</span>
                 My Role &amp; Approach
               </h2>
               <p className="mt-5 text-[15.5px] leading-[1.8] text-[#5b657c]">
-                As the Product Manager, I led the redesign of the onboarding experience. My approach focused on simplifying key user flows, reducing friction points, and guiding users step-by-step to their &apos;Aha!&apos; moment faster. I leveraged analytics tools and conducted user interviews to identify drop-off points.
+                As the Associate Product Manager, I led the initiative to reverse this engagement decline. I focused on data-informed design, tracking user paths to identify exit points. By conducting customer interviews and analyzing group patterns, we uncovered that the workspace setup was too complex.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="p-5 rounded-2xl glass-card">
-                  <span className="text-[11px] font-mono text-[#6f8cff] bg-[#6f8cff]/5 px-2 py-0.5 rounded border border-[#6f8cff]/10">Step 1</span>
-                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Friction Mapping</h4>
+                  <span className="text-[11px] font-mono text-[#ec4899] bg-[#ec4899]/5 px-2 py-0.5 rounded border border-[#ec4899]/10">Step 1</span>
+                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">User Path Tracking</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    Tracked user actions on onboarding screens to isolate drop-off points.
+                    Mapped user interaction data to pinpoint exactly which fields and forms caused users to exit.
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl glass-card">
-                  <span className="text-[11px] font-mono text-[#6f8cff] bg-[#6f8cff]/5 px-2 py-0.5 rounded border border-[#6f8cff]/10">Step 2</span>
-                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Customer Surveys</h4>
+                  <span className="text-[11px] font-mono text-[#ec4899] bg-[#ec4899]/5 px-2 py-0.5 rounded border border-[#ec4899]/10">Step 2</span>
+                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">User Segmenting</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    Surveyed small business owners to understand what parts of setup were most confusing.
+                    Grouped user behaviors to separate casual survey creators from power-users.
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl glass-card">
-                  <span className="text-[11px] font-mono text-[#6f8cff] bg-[#6f8cff]/5 px-2 py-0.5 rounded border border-[#6f8cff]/10">Step 3</span>
-                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Prototype Iterations</h4>
+                  <span className="text-[11px] font-mono text-[#ec4899] bg-[#ec4899]/5 px-2 py-0.5 rounded border border-[#ec4899]/10">Step 3</span>
+                  <h4 className="text-[16px] font-bold text-[#18233f] mt-3">Customer Interviews</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    Created and verified progressive setup flows to find the most intuitive path.
+                    Conducted feedback sessions with active users to validate form usability complaints.
                   </p>
                 </div>
               </div>
@@ -172,45 +172,45 @@ export default function VepaarCaseStudy() {
             {/* The Solution */}
             <section className="p-6 sm:p-8 rounded-[24px] glass-card-strong hover:scale-[1.005] transition duration-300">
               <h2 className="text-[22px] font-bold text-[#18233f] flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff] text-[15px] font-bold">3</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899] text-[15px] font-bold">3</span>
                 The Solution
               </h2>
               <p className="mt-5 text-[15.5px] leading-[1.8] text-[#5b657c]">
-                We introduced a step-by-step progressive onboarding guide, breaking down the complex setup into smaller, manageable steps. We added interactive tooltips and a checklist to guide users. The redesign focused heavily on user experience optimization, ensuring the interface was intuitive.
+                We completely redesigned the poll creation workflow. We simplified the layout, reduced default options, and introduced instant templates. Furthermore, we integrated a conversational polling widget that worked directly within communication channels.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="p-5 rounded-2xl glass-card">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#6f8cff]/10 text-[#6f8cff] border border-[#6f8cff]/20 shadow-sm mb-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ec4899]/10 text-[#ec4899] border border-[#ec4899]/20 shadow-sm mb-3">
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                   </div>
-                  <h4 className="text-[16px] font-bold text-[#18233f]">Progressive Wizard</h4>
+                  <h4 className="text-[16px] font-bold text-[#18233f]">Progressive Workflow</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    Divided configuration pages into digestible, numbered milestones.
+                    Hid advanced configurations behind progressive expanders, keeping the main flow clean.
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl glass-card">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#6f8cff]/10 text-[#6f8cff] border border-[#6f8cff]/20 shadow-sm mb-3">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h4 className="text-[16px] font-bold text-[#18233f]">Interactive Tooltips</h4>
-                  <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    Added contextual, hoverable tooltips to clarify options without cluttering the screen.
-                  </p>
-                </div>
-                <div className="p-5 rounded-2xl glass-card">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#6f8cff]/10 text-[#6f8cff] border border-[#6f8cff]/20 shadow-sm mb-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ec4899]/10 text-[#ec4899] border border-[#ec4899]/20 shadow-sm mb-3">
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                     </svg>
                   </div>
-                  <h4 className="text-[16px] font-bold text-[#18233f]">Setup Checklist</h4>
+                  <h4 className="text-[16px] font-bold text-[#18233f]">Instant Templates</h4>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
-                    Gave users a persistent progress checklist that check-marked tasks in real time.
+                    Supplied one-click presets for common poll styles so users could start immediately.
+                  </p>
+                </div>
+                <div className="p-5 rounded-2xl glass-card">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ec4899]/10 text-[#ec4899] border border-[#ec4899]/20 shadow-sm mb-3">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-[16px] font-bold text-[#18233f]">In-Chat Interaction</h4>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[#5b657c]">
+                    Allowed respondents to vote directly within their active chat thread, avoiding page redirects.
                   </p>
                 </div>
               </div>
@@ -219,59 +219,59 @@ export default function VepaarCaseStudy() {
             {/* Results & Impact */}
             <section className="p-6 sm:p-8 rounded-[24px] glass-card-strong hover:scale-[1.005] transition duration-300">
               <h2 className="text-[22px] font-bold text-[#18233f] flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff] text-[15px] font-bold">4</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899] text-[15px] font-bold">4</span>
                 Results &amp; Impact
               </h2>
 
               <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <div className="relative overflow-hidden p-6 rounded-[22px] glass-card border-[#6f8cff]/15 hover:border-[#6f8cff]/30 hover:scale-[1.02] transition duration-300 flex flex-col justify-between min-h-[180px]">
+                <div className="relative overflow-hidden p-6 rounded-[22px] glass-card border-[#ec4899]/15 hover:border-[#ec4899]/30 hover:scale-[1.02] transition duration-300 flex flex-col justify-between min-h-[180px]">
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Activation Rate</span>
-                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff]">
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-[38px] font-extrabold text-[#6f8cff] tracking-tight leading-none">+35%</p>
-                  </div>
-                  <p className="mt-4 text-[13px] leading-relaxed text-[#5b657c]">
-                    Increase in user activation rate and onboarding completion milestones.
-                  </p>
-                </div>
-
-                <div className="relative overflow-hidden p-6 rounded-[22px] glass-card border-[#6f8cff]/15 hover:border-[#6f8cff]/30 hover:scale-[1.02] transition duration-300 flex flex-col justify-between min-h-[180px]">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Time-to-Value</span>
-                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff]">
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-[38px] font-extrabold text-[#34d399] tracking-tight leading-none">-20%</p>
-                  </div>
-                  <p className="mt-4 text-[13px] leading-relaxed text-[#5b657c]">
-                    Reduction in average setup duration, allowing SMBs to launch faster.
-                  </p>
-                </div>
-
-                <div className="relative overflow-hidden p-6 rounded-[22px] glass-card border-[#6f8cff]/15 hover:border-[#6f8cff]/30 hover:scale-[1.02] transition duration-300 flex flex-col justify-between min-h-[180px]">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">User Retention</span>
-                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#6f8cff]/10 text-[#6f8cff]">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">User Engagement</span>
+                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899]">
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                       </div>
                     </div>
-                    <p className="mt-4 text-[38px] font-extrabold text-[#a78bfa] tracking-tight leading-none">+15%</p>
+                    <p className="mt-4 text-[38px] font-extrabold text-[#ec4899] tracking-tight leading-none">+28%</p>
                   </div>
                   <p className="mt-4 text-[13px] leading-relaxed text-[#5b657c]">
-                    Higher retention rates over 3 months for users completing setup.
+                    Increase in overall active polling engagement and response rates.
+                  </p>
+                </div>
+
+                <div className="relative overflow-hidden p-6 rounded-[22px] glass-card border-[#ec4899]/15 hover:border-[#ec4899]/30 hover:scale-[1.02] transition duration-300 flex flex-col justify-between min-h-[180px]">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Poll Completion</span>
+                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899]">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-[38px] font-extrabold text-[#34d399] tracking-tight leading-none">+15%</p>
+                  </div>
+                  <p className="mt-4 text-[13px] leading-relaxed text-[#5b657c]">
+                    Improvement in survey completion rates once started.
+                  </p>
+                </div>
+
+                <div className="relative overflow-hidden p-6 rounded-[22px] glass-card border-[#ec4899]/15 hover:border-[#ec4899]/30 hover:scale-[1.02] transition duration-300 flex flex-col justify-between min-h-[180px]">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Creation Time</span>
+                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#ec4899]/10 text-[#ec4899]">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-[38px] font-extrabold text-[#a78bfa] tracking-tight leading-none">&lt;45s</p>
+                  </div>
+                  <p className="mt-4 text-[13px] leading-relaxed text-[#5b657c]">
+                    Average time to compile and launch a new interactive poll fell from 3 minutes.
                   </p>
                 </div>
               </div>
@@ -280,7 +280,7 @@ export default function VepaarCaseStudy() {
 
           {/* Sticky Metadata Sidebar */}
           <div className="space-y-6 lg:sticky lg:top-24 self-start">
-            <div className="rounded-[24px] p-6 glass-card shadow-sm hover:border-[#6f8cff]/30 transition duration-300">
+            <div className="rounded-[24px] p-6 glass-card shadow-sm hover:border-[#ec4899]/30 transition duration-300">
               <h3 className="text-[14px] font-bold text-[#18233f] border-b border-slate-200/50 pb-3 mb-4">
                 Project Details
               </h3>
@@ -291,11 +291,11 @@ export default function VepaarCaseStudy() {
                 </div>
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Timeline</span>
-                  <p className="mt-1.5 text-[#18233f] font-semibold text-[15px]">3 Months</p>
+                  <p className="mt-1.5 text-[#18233f] font-semibold text-[15px]">4 Months</p>
                 </div>
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Team</span>
-                  <p className="mt-1.5 text-[#18233f] font-semibold text-[15px] leading-relaxed">Design, Frontend Dev, Analytics</p>
+                  <p className="mt-1.5 text-[#18233f] font-semibold text-[15px] leading-relaxed">Design, Dev, Analytics</p>
                 </div>
               </div>
             </div>
@@ -308,11 +308,11 @@ export default function VepaarCaseStudy() {
           <div className="rounded-[24px] p-6 sm:p-8 glass-card-strong border border-white/60 shadow-sm flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-left">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Next Case Study</span>
-              <h3 className="mt-1.5 text-[22px] font-bold text-[#18233f] tracking-tight">Monzi Personal Finance Platform</h3>
+              <h3 className="mt-1.5 text-[22px] font-bold text-[#18233f] tracking-tight">Everest Platform QA Strategy</h3>
             </div>
             <Link
-              href="/case-studies/monzi"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6f8cff] hover:bg-[#3d5aff] text-white px-8 py-3.5 text-[14px] font-semibold shadow-md transition duration-300 hover:-translate-y-0.5"
+              href="/case-studies/everest"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ec4899] hover:bg-[#db2777] text-white px-8 py-3.5 text-[14px] font-semibold shadow-md transition duration-300 hover:-translate-y-0.5"
             >
               Read Next Case Study →
             </Link>

@@ -106,27 +106,18 @@
   body {
     font-family: var(--font-sans), system-ui, sans-serif;
     color: var(--foreground);
-    /*
-     * Apple-style deep mesh gradient — fixed so every section shares the same
-     * rich backdrop that makes the glass panes pop.
-     */
-    background-color: #d9e3ff;
-    background-image:
-      /* Soft aurora blobs */
-      radial-gradient(ellipse 90% 70% at 10% 5%, rgba(180, 205, 255, 0.90) 0%, transparent 55%),
-      radial-gradient(ellipse 65% 55% at 88% 15%, rgba(210, 195, 255, 0.80) 0%, transparent 50%),
-      radial-gradient(ellipse 55% 45% at 55% 90%, rgba(190, 215, 255, 0.75) 0%, transparent 55%),
-      radial-gradient(ellipse 45% 40% at 2% 78%, rgba(195, 230, 255, 0.65) 0%, transparent 50%),
-      radial-gradient(ellipse 40% 35% at 70% 55%, rgba(220, 200, 255, 0.50) 0%, transparent 45%),
-      /* Base gradient */
-      linear-gradient(150deg, #d8e5ff 0%, #e5eaff 35%, #e1e6ff 65%, #ecdeff 100%);
-    background-attachment: fixed;
     min-height: 100vh;
+    /* Background is handled by the fixed #bg-gradient div in layout.tsx
+       to avoid background-attachment:fixed which disables GPU compositing
+       and causes scroll jank on every frame. */
+    background-color: #d9e3ff;
   }
 
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    /* Offset anchor scrolling for fixed header */
+    scroll-padding-top: 88px;
   }
 
   h1,
@@ -136,6 +127,13 @@
   h5,
   h6 {
     font-family: var(--font-heading), system-ui, sans-serif;
+  }
+
+  /* ── Keyboard focus-visible ring ── */
+  :focus-visible {
+    outline: 2px solid #5f7fff;
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 }
 
@@ -306,6 +304,8 @@
   backdrop-filter: saturate(210%) blur(44px);
   -webkit-backdrop-filter: saturate(210%) blur(44px);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  /* Promote header to its own GPU layer so scrolling beneath it is cheap */
+  will-change: backdrop-filter;
   box-shadow:
     0 2px 4px -1px rgba(82, 100, 210, 0.04),
     0 12px 24px -6px rgba(82, 100, 210, 0.10),
@@ -406,10 +406,13 @@
 
 .float {
   animation: float 6s ease-in-out infinite;
+  /* Promote to GPU layer so float movement doesn’t trigger layout/paint */
+  will-change: transform;
 }
 
 .float-delayed {
   animation: float 6s ease-in-out infinite 2s;
+  will-change: transform;
 }
 
 /* Pulse ring */
@@ -533,6 +536,16 @@
   }
 }
 
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Feature cards: animate once on load, stay visible */
 .feature-card-anim {
   animation: fadeUp 0.4s ease-out forwards;
@@ -546,7 +559,8 @@
 
 /* Marquee tracks */
 .marquee-track {
-  animation: marquee linear infinite;
+  animation: marquee-scroll linear infinite;
+  /* GPU layer — translate-only animations should never hit the main thread */
   will-change: transform;
 }
 
@@ -555,22 +569,25 @@
   animation-play-state: paused;
 }
 
-.marquee-track {
-  animation: marquee-scroll linear infinite;
-}
-
-@keyframes marquee-scroll {
+/* ── Mobile menu slide-down animation ── */
+@keyframes slideDown {
   from {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateY(-12px);
   }
-
   to {
-    transform: translateX(-50%);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+.mobile-menu-open {
+  animation: slideDown 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* ── Section anchor scroll offset ── */
+.section-anchor {
+  scroll-margin-top: 88px;
 }
 
 /* ── Premium Micro Details ── */

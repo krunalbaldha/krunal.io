@@ -27,6 +27,8 @@ const apmPoints = [
   'Improved release quality through structured QA validation and automation support.',
 ] as const;
 
+// Project showcase details are hidden in current version.
+
 // Each pill is ~96 px wide + 8 px gap → 5 visible = 5 * (96 + 8) - 8 = 512 px
 const VISIBLE = 5;
 const PILL_W = 96; // px per pill (fixed width)
@@ -59,7 +61,7 @@ export default function WorkSection() {
   };
 
   return (
-    <section id="work" className="px-4 pb-10 sm:px-5 md:pb-14 lg:px-6">
+    <section id="work" aria-labelledby="work-heading" className="section-anchor pt-3 pb-3 sm:pt-4 sm:pb-4 lg:pt-6 lg:pb-6 px-4 sm:px-5 lg:px-6">
       <div className="mx-auto max-w-[1200px]">
 
         {/* ── Heading ── */}
@@ -67,7 +69,7 @@ export default function WorkSection() {
           <p className="text-[12px] font-semibold uppercase tracking-[0.28em] text-[#6f8cff] sm:text-[13px]">
             Work Experience
           </p>
-          <h2 className="mt-3 max-w-[760px] text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-[#18233f] sm:text-[36px] md:text-[42px]">
+          <h2 id="work-heading" className="mt-3 max-w-[760px] text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-[#18233f] sm:text-[36px] md:text-[42px]">
             Shipping products across product, operations, and engineering.
           </h2>
         </div>
@@ -138,7 +140,7 @@ export default function WorkSection() {
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 transition-opacity duration-200"
                     style={{
-                      background: 'linear-gradient(to right, rgba(255,255,255,1), transparent)',
+                      background: 'linear-gradient(to right, rgba(255,255,255,0.9), transparent)',
                       opacity: canLeft ? 1 : 0,
                     }}
                   />
@@ -146,7 +148,7 @@ export default function WorkSection() {
                   <div
                     className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 transition-opacity duration-200"
                     style={{
-                      background: 'linear-gradient(to left, rgba(255,255,255,1), transparent)',
+                      background: 'linear-gradient(to left, rgba(255,255,255,0.9), transparent)',
                       opacity: canRight ? 1 : 0,
                     }}
                   />
@@ -159,13 +161,13 @@ export default function WorkSection() {
                     {productTags.map((item) => (
                       <span
                         key={item.name}
-                        title={item.type}
+                        title={`${item.name} (${item.type})`}
                         style={{ width: PILL_W, minWidth: PILL_W }}
                         className={`shrink-0 flex items-center justify-center gap-1 rounded-full py-1.5
-                          text-[12px] font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-md
+                          text-[12px] font-semibold transition-all duration-200 hover:scale-[1.02] hover:shadow-md border
                           ${item.type === 'Product'
-                            ? 'border border-indigo-200 bg-white text-indigo-600 shadow-[0_2px_10px_rgba(99,102,241,0.18)]'
-                            : 'border border-teal-200  bg-white text-teal-600  shadow-[0_2px_10px_rgba(20,184,166,0.18)]'
+                            ? 'border-indigo-200 bg-white text-indigo-600 shadow-[0_2px_10px_rgba(99,102,241,0.12)]'
+                            : 'border-teal-200  bg-white text-teal-600  shadow-[0_2px_10px_rgba(20,184,166,0.12)]'
                           }`}
                       >
                         <span
@@ -197,19 +199,24 @@ export default function WorkSection() {
               </div>
             </div>
 
-            {/* Bullet points */}
-            <ul className="mt-7 flex flex-col gap-3.5">
-              {apmPoints.map((point) => (
-                <li key={point} className="group flex items-start gap-3.5 transition-all hover:translate-x-1">
-                  <span className="mt-[3px] flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-[#eef2ff] shadow-sm ring-1 ring-[#e0e7ff] transition-colors group-hover:bg-[#e0e7ff] group-hover:ring-[#c7d2fe]">
-                    <svg className="h-[12px] w-[12px] text-[#5b75da]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <p className="text-[14.5px] leading-[1.7] text-[#47536d]">{point}</p>
-                </li>
-              ))}
-            </ul>
+            {/* General APM Responsibilities */}
+            <div className="mt-7">
+              <h4 className="text-[12px] font-semibold uppercase tracking-wider text-[#7c8aa3] mb-3">
+                Core Responsibilities
+              </h4>
+              <ul className="flex flex-col gap-3">
+                {apmPoints.map((point) => (
+                  <li key={point} className="group flex items-start gap-3 transition-all hover:translate-x-1">
+                    <span className="mt-[3px] flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-[#eef2ff] shadow-sm ring-1 ring-[#e0e7ff] transition-colors group-hover:bg-[#e0e7ff] group-hover:ring-[#c7d2fe]">
+                      <svg className="h-[11px] w-[11px] text-[#5b75da]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <p className="text-[13.5px] leading-[1.65] text-[#47536d]">{point}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* ══ Right: Other roles ══ */}

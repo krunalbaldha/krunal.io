@@ -1,29 +1,30 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const caseStudies = [
   {
-    eyebrow: 'Vepaar · SaaS · Growth',
-    title: 'Boosting Product Adoption with Onboarding & UX Optimization',
+    eyebrow: 'Monzi · Full-Stack · Fintech',
+    title: 'Monzi Personal Finance Management Platform',
     description:
-      'Redesigned onboarding and simplified key user flows to reduce friction and improve activation. Focused on faster time-to-value, resulting in higher user retention and improved feature adoption across SMB users.',
-    image: '/images/blogs/1.png',
+      'A secure personal finance and analytics platform featuring automated monthly budgeting cycles, instant dashboard load times, and custom financial insight engines.',
+    image: '/images/blogs/monzi.png',
     accent: '#6366f1',
     bg: 'rgba(99,102,241,0.06)',
-    tags: ['Onboarding', 'UX Optimization', 'Activation', 'Retention'],
-    href: '/case-studies/vepaar',
+    tags: ['Personal Finance', 'Budget Automation', 'Financial Analytics', 'Fintech'],
+    href: '/case-studies/monzi',
     comingSoon: false,
-    metric: { label: 'Activation Rate', value: '+34%' },
+    metric: { label: 'Query Latency', value: 'Sub-ms' },
   },
   {
     eyebrow: 'Voliz · SaaS · Engagement',
     title: 'Increasing User Engagement through Data-Driven Product Decisions',
     description:
       'Leveraged product analytics and user behavior insights to identify drop-offs and optimize user journeys. Implemented data-backed improvements that enhanced engagement, usability, and overall product experience.',
-    image: '/images/blogs/2.png',
+    image: '/images/blogs/NextHire.png',
     accent: '#ec4899',
     bg: 'rgba(236,72,153,0.05)',
     tags: ['Product Analytics', 'User Behavior', 'Engagement', 'UX'],
@@ -81,7 +82,7 @@ export default function CaseStudiesSection() {
   };
 
   return (
-    <section className="px-4 pb-10 sm:px-5 md:pb-14 lg:px-6">
+    <section id="case-studies" aria-labelledby="case-studies-heading" className="section-anchor pt-3 pb-3 sm:pt-4 sm:pb-4 lg:pt-6 lg:pb-6 px-4 sm:px-5 lg:px-6">
       <div className="mx-auto max-w-[1200px]">
         {/* Section header */}
         <div className="mb-6 flex items-end justify-between">
@@ -89,7 +90,10 @@ export default function CaseStudiesSection() {
             <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6f8cff]">
               Case Studies
             </p>
-            <p className="mt-2 max-w-[560px] text-[15px] leading-[1.8] text-[#5b657c]">
+            <h2 id="case-studies-heading" className="mt-3 text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-[#18233f] sm:text-[36px] md:text-[42px]">
+              Featured Case Studies
+            </h2>
+            <p className="mt-3 max-w-[560px] text-[15px] leading-[1.8] text-[#5b657c]">
               A curated set of work showcasing how I approach complex problems,
               design systems, and business impact.
             </p>
@@ -243,7 +247,7 @@ export default function CaseStudiesSection() {
               <motion.div
                 animate={{ backgroundColor: study.bg }}
                 transition={{ duration: 0.45 }}
-                className="relative flex min-h-[240px] items-center justify-center overflow-hidden rounded-[22px] p-3 glass-card sm:min-h-[280px] lg:min-h-[320px]"
+                className="relative w-full aspect-[16/10] overflow-hidden rounded-[22px] p-3 sm:p-4 glass-card"
               >
                 {/* Coming Soon overlay */}
                 {study.comingSoon && (
@@ -254,7 +258,7 @@ export default function CaseStudiesSection() {
                     </div>
                   </div>
                 )}
-
+ 
                 {/* Decorative accent ring */}
                 <div
                   style={{
@@ -268,24 +272,40 @@ export default function CaseStudiesSection() {
                     pointerEvents: 'none',
                   }}
                 />
-
+ 
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`image-wrapper-${active}`}
-                    initial={{ opacity: 0, scale: 0.98, y: 10 }}
+                    initial={{ opacity: 0, scale: 0.95, y: 15 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.98, y: -10 }}
-                    transition={{ duration: 0.2, ease: 'easeOut' }}
-                    className="flex h-full w-full items-center justify-center"
+                    exit={{ opacity: 0, scale: 0.95, y: -15 }}
+                    transition={{ duration: 0.35, ease: 'easeInOut' }}
+                    className="w-full h-full z-10"
                   >
-                    <motion.img
-                      src={study.image}
-                      alt={study.title}
-                      animate={{ y: [0, -12, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                      whileHover={{ scale: 1.02 }}
-                      className="h-[200px] w-auto cursor-pointer object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.08)] sm:h-[240px] lg:h-[280px]"
-                    />
+                    <motion.div
+                      animate={{ y: [0, -8, 0] }}
+                      transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                      whileHover={{ scale: 1.03 }}
+                      className="relative w-full h-full rounded-[14px] sm:rounded-xl overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-slate-950 flex items-center justify-center transition duration-300"
+                    >
+                      {/* Accent glow behind image */}
+                      <div 
+                        className="absolute inset-0 opacity-40 blur-[40px] pointer-events-none"
+                        style={{
+                          background: `radial-gradient(circle, ${study.accent}88 0%, transparent 70%)`
+                        }}
+                      />
+                      <div className="relative h-[85%] w-[85%] z-10">
+                        <Image
+                          src={study.image}
+                          alt={study.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 500px"
+                          priority
+                          className="cursor-pointer object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)]"
+                        />
+                      </div>
+                    </motion.div>
                   </motion.div>
                 </AnimatePresence>
               </motion.div>

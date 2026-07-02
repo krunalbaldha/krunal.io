@@ -1,11 +1,13 @@
 'use client'
 
+import Image from 'next/image';
 import Magnetic from "@/components/ui/Magnetic";
 import SmoothCounter from "@/components/ui/SmoothCounter";
+import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen w-full overflow-hidden pt-[72px]">
+    <section id="home" className="section-anchor relative min-h-screen w-full overflow-hidden pt-[72px]">
 
       {/* ── Page background depth orbs ── */}
       <div className="pointer-events-none absolute inset-0">
@@ -55,21 +57,36 @@ export default function HeroSection() {
           {/* CTAs */}
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <Magnetic>
-              <button className="hover-gradient-border rounded-full px-7 py-3 text-[14px] font-semibold text-[#21304f] transition hover:scale-[1.02] glass-badge">
-                <a href="#work">View Projects</a>
-              </button>
+              <Button variant="glass" size="lg" asChild>
+                <a href="#work">
+                  View Projects
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button variant="outlinePremium" size="lg" asChild>
+                <a
+                  href="/resume/Krunal%20Baldha%20-%20PM%20Main%20.pdf"
+                  download="Krunal Baldha - Resume.pdf"
+                >
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="mr-2 shrink-0">
+                    <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Resume
+                </a>
+              </Button>
             </Magnetic>
           </div>
 
           {/* Stats */}
-          <div className="mt-8 flex items-center gap-6 sm:gap-8">
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 sm:gap-x-8">
             {[
               { value: 15, suffix: '+', label: 'Projects Delivered' },
               { value: 5, suffix: '★', label: 'Client Satisfaction' },
               { value: 2, suffix: '+', label: 'Years in Product' },
             ].map((s, i) => (
               <div key={s.label} className="flex items-center gap-6 sm:gap-8">
-                {i > 0 && <div className="h-8 w-px bg-white/50" />}
+                {i > 0 && <div className="h-8 w-px bg-[#c8d4ff]/60" />}
                 <div>
                   <p className="text-[22px] font-bold tracking-[-0.04em] text-[#17233f]">
                     <SmoothCounter value={s.value} suffix={s.suffix} />
@@ -149,12 +166,14 @@ export default function HeroSection() {
           <div className="absolute right-[30%] top-[22%] h-[5px] w-[5px] rounded-full bg-[#6f8cff]/40 float-delayed" />
 
           {/* ── Boy hero image ── */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/images/Hero.png"
             alt="Product Manager illustration"
-            className="select-none"
+            width={600}
+            height={600}
+            priority
             draggable={false}
+            className="select-none pointer-events-none z-10"
             style={{
               position: 'absolute',
               bottom: 0,
@@ -163,7 +182,6 @@ export default function HeroSection() {
               height: '90%',
               width: 'auto',
               objectFit: 'contain',
-              zIndex: 10,
               filter: 'drop-shadow(0 24px 48px rgba(82,100,210,0.18))',
             }}
           />

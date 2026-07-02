@@ -4,36 +4,42 @@ const highlightStats = [
     subtitle: 'through QA strategy & automation',
     brand: 'Quality',
     accent: 'QA',
+    color: '#6f8cff',
   },
   {
     title: '25% Faster API Performance',
     subtitle: 'via backend optimization',
     brand: 'Engineering',
     accent: 'Performance',
+    color: '#34d399',
   },
   {
     title: '35% Workflow Efficiency Increase',
     subtitle: 'in operations & coordination',
     brand: 'LJ University',
     accent: 'Operations',
+    color: '#f59e0b',
   },
   {
     title: 'Improved Product Adoption',
     subtitle: 'via UX & onboarding improvements',
     brand: 'Vepaar',
     accent: 'Growth',
+    color: '#ec4899',
   },
   {
     title: '5+ SaaS Products Delivered',
     subtitle: 'from ideation to launch',
     brand: 'APM',
     accent: 'Execution',
+    color: '#a78bfa',
   },
   {
     title: 'Cross-functional Collaboration',
     subtitle: 'with design, dev & QA teams',
     brand: 'Teamwork',
     accent: 'Collaboration',
+    color: '#14b8a6',
   },
 ] as const;
 
@@ -41,45 +47,59 @@ const marqueeHighlights = [...highlightStats, ...highlightStats];
 
 export default function HighlightsSection() {
   return (
-    <section className="px-4 pb-16 sm:px-5 md:pb-20 lg:px-6">
+    <section aria-labelledby="highlights-heading" className="section-anchor pt-3 pb-3 sm:pt-4 sm:pb-4 lg:pt-6 lg:pb-6 px-4 sm:px-5 lg:px-6">
       <div className="mx-auto max-w-[1200px]">
-        <div className="mb-6">
+        <div className="mb-8">
           <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6f8cff]">
             Highlights
           </p>
 
-          <h2 className="mt-3 text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-[#18233f] sm:text-[36px] md:text-[42px]">
+          <h2
+            id="highlights-heading"
+            className="mt-3 text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-[#18233f] sm:text-[36px] md:text-[42px]"
+          >
             Impact in Numbers
           </h2>
         </div>
 
-        <div className="relative rounded-[30px] bg-white/35 p-5 shadow-[0_20px_70px_rgba(31,43,92,0.08)] backdrop-blur-xl">
-          <div className="relative overflow-hidden rounded-[24px]">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-[#f7f8ff] via-[#f7f8ff]/90 to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-[#f7f8ff] via-[#f7f8ff]/90 to-transparent" />
+        <div className="relative rounded-[30px] p-5 glass-card-strong">
+          <div className="relative overflow-hidden rounded-[24px] marquee-wrapper">
+            {/* Fade masks — use transparent so they work on any background */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-white/60 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-white/60 to-transparent" />
 
             <div
-              className="flex w-max gap-6 py-2 marquee-track"
-              style={{ animationDuration: '24s' }}
+              className="flex w-max gap-5 py-2 marquee-track"
+              style={{ animationDuration: '28s' }}
             >
               {marqueeHighlights.map((item, index) => (
                 <article
                   key={`${item.title}-${index}`}
-                  className="flex h-auto min-h-[220px] w-[300px] shrink-0 flex-col rounded-[26px] border border-white/60 bg-white/70 px-7 py-7 shadow-[0_18px_50px_rgba(31,43,92,0.10)] backdrop-blur-xl sm:w-[320px]"
+                  className="flex h-auto min-h-[210px] w-[280px] shrink-0 flex-col rounded-[22px] px-6 py-6 glass-card sm:w-[300px]"
                 >
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#b6aea3]">
-                    {item.accent}
-                  </p>
+                  {/* Accent label with color dot */}
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="inline-block h-2 w-2 rounded-full"
+                      style={{ background: item.color }}
+                    />
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#94a3b8]">
+                      {item.accent}
+                    </p>
+                  </div>
 
-                  <h3 className="mt-5 max-w-[260px] text-[17px] font-semibold leading-[1.25] tracking-[-0.02em] text-[#2a2730] sm:text-[18px]">
+                  <h3 className="mt-4 max-w-[260px] text-[16px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#2a2730] sm:text-[17px]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 max-w-[250px] text-[14px] leading-[1.55] text-[#655f59] sm:text-[15px]">
+                  <p className="mt-2.5 max-w-[240px] text-[13px] leading-[1.6] text-[#655f59] sm:text-[14px]">
                     {item.subtitle}
                   </p>
 
-                  <div className="mt-auto pt-4 text-[17px] font-semibold tracking-[-0.02em] text-[#5d35d7] sm:text-[18px]">
+                  <div
+                    className="mt-auto pt-4 text-[15px] font-semibold tracking-[-0.02em] sm:text-[16px]"
+                    style={{ color: item.color }}
+                  >
                     {item.brand}
                   </div>
                 </article>
