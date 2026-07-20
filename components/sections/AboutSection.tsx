@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Magnetic from '@/components/ui/Magnetic';
+import { Button } from '@/components/ui/button';
 
 const aboutStats = [
   {
@@ -71,68 +72,95 @@ const marqueeTools = [...toolLogos, ...toolLogos];
 
 export default function AboutSection() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="section-anchor pt-3 pb-3 sm:pt-4 sm:pb-4 lg:pt-6 lg:pb-6 px-4 sm:px-5 lg:px-6">
+    <section id="about" aria-labelledby="about-heading" className="section-anchor pt-2 pb-2 sm:pt-3 sm:pb-3 lg:pt-4 lg:pb-4 px-4 sm:px-5 lg:px-6">
       <div className="mx-auto max-w-[1200px]">
 
         {/* Portrait + Bio */}
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[260px_1fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[290px_1fr] items-stretch">
           {/* Portrait */}
-          <div className="overflow-hidden rounded-[26px] p-2 glass-card relative min-h-[300px] lg:min-h-full">
-            <Image
-              src="/images/krunal.png"
-              alt="Krunal Baldha portrait"
-              fill
-              sizes="(max-width: 1024px) 100vw, 260px"
-              priority
-              className="rounded-[22px] object-cover object-top p-2"
+          <div className="group relative overflow-hidden rounded-[30px] p-3.5 glass-card flex flex-col items-center justify-center bg-gradient-to-b from-white/30 to-white/10 shadow-[0_12px_32px_rgba(99,102,241,0.04)] hover:shadow-[0_16px_40px_rgba(61,90,255,0.12)] border border-white/60 hover:border-indigo-200/80 transition-all duration-500 w-full h-full min-h-[350px] lg:min-h-0">
+            {/* Elegant mesh backdrop glow behind avatar */}
+            <div 
+              className="absolute inset-2 rounded-[24px] opacity-75 blur-[28px] pointer-events-none transition-opacity duration-500 group-hover:opacity-90"
+              style={{
+                background: `radial-gradient(circle at 20% 20%, #c7d2fe 0%, #e0e7ff 40%, #dbeafe 100%)`
+              }}
             />
+            {/* Additional dynamic color ring */}
+            <div className="absolute inset-0 rounded-[30px] border border-transparent group-hover:border-indigo-100/50 transition-colors duration-500 pointer-events-none z-20" />
+            
+            <div className="relative w-[85%] h-[85%] z-10 transition-all duration-500 group-hover:scale-[1.04] group-hover:rotate-[1deg]">
+              <Image
+                src="/images/profile.jpg"
+                alt="Krunal Baldha portrait"
+                fill
+                sizes="(max-width: 1024px) 100vw, 290px"
+                priority
+                className="rounded-[20px] object-cover object-top drop-shadow-[0_8px_16px_rgba(0,0,0,0.08)]"
+              />
+            </div>
           </div>
 
           {/* Bio */}
-          <div className="rounded-[26px] px-6 py-7 glass-card-strong sm:px-8 lg:px-10">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6f8cff]">
-              About Me
-            </p>
+          <div className="rounded-[30px] px-6 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-9 glass-card-strong flex flex-col justify-between border border-white/70 shadow-[0_12px_32px_rgba(99,102,241,0.03)]">
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6f8cff] sm:text-[13px] mb-4">
+                About Me
+              </p>
 
-            <h2
-              id="about-heading"
-              className="mt-3 text-[26px] font-semibold tracking-[-0.03em] text-[#2a2730] sm:text-[30px]"
-            >
-              Associate Product Manager building scalable SaaS products.
-            </h2>
-
-            <p className="mt-4 max-w-[860px] text-[15px] leading-[1.95] text-[#5f6678] sm:text-[16px]">
-              I&apos;m a results-driven Associate Product Manager with 2+ years
-              of experience delivering SaaS products end-to-end. I specialize in
-              product strategy, roadmap planning, PRD development, Agile
-              execution, user stories, KPI tracking, and data-driven product
-              decisions.
-            </p>
-
-            <p className="mt-3 max-w-[860px] text-[15px] leading-[1.95] text-[#5f6678] sm:text-[16px]">
-              I&apos;ve worked across products like Vepaar, Pagemaker, Voliz,
-              Everest, and D2Cguru, contributing from feature ideation to
-              release. My strength is combining product thinking, QA discipline,
-              and cross-functional collaboration to ship quality products users love.
-            </p>
-
-            <Magnetic>
-              <a
-                href="/resume/Krunal%20Baldha%20-%20PM%20Main%20.pdf"
-                download="Krunal Baldha - Resume.pdf"
-                className="hover-gradient-border mt-7 inline-flex items-center gap-2.5 rounded-[16px] border border-white/60 px-6 py-3 text-[15px] font-semibold text-[#2b2b35] shadow-[0_6px_0_rgba(43,43,53,0.10)] transition hover:scale-[1.02] glass-badge"
+              <h2
+                id="about-heading"
+                className="text-[25px] font-bold tracking-[-0.03em] text-[#0f172a] sm:text-[30px] leading-[1.3] mb-4"
               >
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Download Resume
-              </a>
-            </Magnetic>
+                Associate Product Manager building{' '}
+                <span className="text-[#3d5aff]">
+                  scalable SaaS products
+                </span>.
+              </h2>
+
+              <div className="space-y-4 text-[14.5px] leading-[1.85] text-[#5b657c] font-medium">
+                <p>
+                  I&apos;m a results-driven Associate Product Manager with 2+ years of experience delivering SaaS products end-to-end. I specialize in product strategy, roadmap planning, PRD development, Agile execution, user stories, KPI tracking, and data-driven product decisions.
+                </p>
+
+                <p>
+                  I&apos;ve worked across products like Vepaar, Pagemaker, Voliz, Everest, and D2Cguru, contributing from feature ideation to release. My strength is combining product thinking, QA discipline, and cross-functional collaboration to ship quality products users love.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-7 flex items-center">
+              <Magnetic>
+                <Button 
+                  variant="outlinePremium" 
+                  asChild 
+                  className="group/btn rounded-full h-[50px] px-8 border-indigo-200/80 bg-white hover:bg-gradient-to-r hover:from-[#3d5aff] hover:to-[#5c6eff] hover:text-white hover:border-transparent shadow-[0_4px_12px_rgba(99,102,241,0.05)] hover:shadow-[0_8px_20px_rgba(61,90,255,0.22)] hover:translate-y-[-2px] active:translate-y-[0px] transition-all duration-300 text-[14px] font-bold"
+                >
+                  <a
+                    href="/resume/Krunal%20Baldha%20-%20PM%20Main%20.pdf"
+                    download="Krunal Baldha - Resume.pdf"
+                    className="flex items-center"
+                  >
+                    <svg 
+                      width="15" 
+                      height="15" 
+                      viewBox="0 0 16 16" 
+                      fill="none" 
+                      aria-hidden="true" 
+                      className="mr-2.5 transition-transform duration-300 group-hover/btn:translate-y-0.5"
+                    >
+                      <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Download Resume
+                  </a>
+                </Button>
+              </Magnetic>
+            </div>
           </div>
         </div>
 
         {/* Stats Cards */}
-        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {aboutStats.map((item) => (
             <div
               key={item.title}
