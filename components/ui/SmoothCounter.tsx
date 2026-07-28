@@ -15,13 +15,15 @@ export default function SmoothCounter({
   prefix?: string;
 }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
-  const [displayValue, setDisplayValue] = useState(0);
+  // Default to final `value` so SSR / static production builds always render the target number in HTML
+  const [displayValue, setDisplayValue] = useState<number>(value);
 
   useEffect(() => {
-    // Start counting immediately as soon as page loads / mounts
+    // On client mount, start count up from 0 to target value
+    setDisplayValue(0);
     const controls = animate(0, value, {
       duration,
-      ease: [0.16, 1, 0.3, 1], // Smooth snappy deceleration curve
+      ease: [0.16, 1, 0.3, 1], // Liquid deceleration curve
       onUpdate(currentValue) {
         setDisplayValue(Math.round(currentValue));
       },
