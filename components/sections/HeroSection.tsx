@@ -81,7 +81,7 @@ export default function HeroSection() {
           {/* Stats */}
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 sm:gap-x-8">
             {[
-              { value: 15, suffix: '+', label: 'Projects Delivered' },
+              { value: 16, suffix: '+', label: 'Projects Delivered' },
               { value: 5, suffix: '★', label: 'Client Satisfaction' },
               { value: 2, suffix: '+', label: 'Years in Product' },
             ].map((s, i) => (

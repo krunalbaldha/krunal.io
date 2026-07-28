@@ -1,11 +1,11 @@
 'use client';
 
-import { animate, useInView } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function SmoothCounter({
   value,
-  duration = 2,
+  duration = 1.2,
   suffix = '',
   prefix = '',
 }: {
@@ -14,29 +14,30 @@ export default function SmoothCounter({
   suffix?: string;
   prefix?: string;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
-  const [displayValue, setDisplayValue] = useState('0');
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
-    if (inView && ref.current) {
-      const controls = animate(0, value, {
-        duration,
-        ease: [0.2, 0.8, 0.2, 1],
-        onUpdate: (val) => {
-          const formatted = Number.isInteger(value) ? Math.round(val) : Number(val).toFixed(1);
-          setDisplayValue(formatted.toString());
-        },
-      });
-      return () => controls.stop();
-    }
-  }, [inView, value, duration]);
+    // Start counting immediately as soon as page loads / mounts
+    const controls = animate(0, value, {
+      duration,
+      ease: [0.16, 1, 0.3, 1], // Smooth snappy deceleration curve
+      onUpdate(currentValue) {
+        setDisplayValue(Math.round(currentValue));
+      },
+    });
+
+    return () => controls.stop();
+  }, [value, duration]);
 
   return (
-    <span ref={ref}>
+    <motion.span
+      ref={nodeRef}
+      className="inline-flex items-baseline tracking-tight font-bold"
+    >
       {prefix}
       {displayValue}
       {suffix}
-    </span>
+    </motion.span>
   );
 }
