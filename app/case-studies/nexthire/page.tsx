@@ -5,6 +5,16 @@ export const metadata = {
   title: 'NextHire AI Case Study – AI Resume Screening & Semantic Retrieval | Krunal Baldha',
   description:
     'Comprehensive real-world case studies demonstrating how NextHire AI leverages FAISS vector search and ATS candidate ranking to solve talent acquisition challenges.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/images/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/icons/apple.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 const architecturePhases = [
