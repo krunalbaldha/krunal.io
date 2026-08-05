@@ -413,10 +413,10 @@ export default function NexthireCaseStudy() {
           <div className="rounded-[24px] p-6 sm:p-8 glass-card-strong border border-white/60 shadow-sm flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-left">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Next Case Study</span>
-              <h3 className="mt-1.5 text-[22px] font-bold text-[#18233f] tracking-tight">Everest Platform QA Strategy</h3>
+              <h3 className="mt-1.5 text-[22px] font-bold text-[#18233f] tracking-tight">Webmine Platform QA Strategy</h3>
             </div>
             <Link
-              href="/case-studies/everest"
+              href="/case-studies/webmine"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ec4899] hover:bg-[#db2777] text-white px-8 py-3.5 text-[14px] font-semibold shadow-md transition duration-300 hover:-translate-y-0.5"
             >
               Read Next Case Study →

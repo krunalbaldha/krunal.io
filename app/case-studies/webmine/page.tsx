@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Everest Case Study – QA Strategy & Automation | Krunal Baldha',
+  title: 'Webmine Case Study – QA Strategy & Automation | Krunal Baldha',
   description:
-    'How I introduced structured QA processes and test automation workflows on the Everest platform to cut production defects and secure reliable release cycles.',
+    'How I introduced structured QA processes and test automation workflows on the Webmine platform to cut production defects and secure reliable release cycles.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -17,7 +17,7 @@ export const metadata = {
   },
 };
 
-export default function EverestCaseStudy() {
+export default function WebmineCaseStudy() {
   return (
     <main className="min-h-screen bg-[#f3f5fb] text-[#1e293b] px-4 py-24 sm:px-5 lg:px-6 selection:bg-[#14b8a6]/20">
       {/* Ambient background glows */}
@@ -38,7 +38,7 @@ export default function EverestCaseStudy() {
         {/* Header Hero Section */}
         <div className="mt-10">
           <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#14b8a6]">
-            Everest · Platform · Performance
+            Webmine · Platform · Performance
           </p>
           <h1 className="mt-4 text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-[#18233f] sm:text-[46px] lg:text-[54px]">
             Improving Product Quality with QA Strategy &amp; Automation
@@ -81,7 +81,7 @@ export default function EverestCaseStudy() {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
-              href="https://everest.app"
+              href="https://webmine.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#14b8a6] hover:bg-[#0d9488] text-white px-6 py-2.5 text-[13.5px] font-semibold shadow-md transition-all duration-300 hover:scale-[1.02]"
@@ -111,7 +111,7 @@ export default function EverestCaseStudy() {
             <div className="relative h-[85%] w-[85%] z-10">
               <Image
                 src="/images/blogs/3.png"
-                alt="Everest Case Study"
+                alt="Webmine Case Study"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 1000px"
@@ -132,7 +132,7 @@ export default function EverestCaseStudy() {
                 The Challenge
               </h2>
               <p className="mt-5 text-[15.5px] leading-[1.8] text-[#5b657c]">
-                Everest, a high-traffic operations platform, was encountering quality bottlenecks. Production releases were frequently delayed due to manual testing limitations, and post-release issues were impacting customer satisfaction. Release errors were increasing operational overhead.
+                Webmine, a high-traffic operations platform, was encountering quality bottlenecks. Production releases were frequently delayed due to manual testing limitations, and post-release issues were impacting customer satisfaction. Release errors were increasing operational overhead.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -167,7 +167,7 @@ export default function EverestCaseStudy() {
                 My Role &amp; Approach
               </h2>
               <p className="mt-5 text-[15.5px] leading-[1.8] text-[#5b657c]">
-                As the Quality &amp; Product Specialist, I formulated and executed a comprehensive testing overhaul. My approach shifted Everest from manual dependencies to automated quality validation. I focused on mapping critical user workflows, setting automated scripts for regression checkpoints, and integrating automatic testing directly into developer workflows.
+                As the Quality &amp; Product Specialist, I formulated and executed a comprehensive testing overhaul. My approach shifted Webmine from manual dependencies to automated quality validation. I focused on mapping critical user workflows, setting automated scripts for regression checkpoints, and integrating automatic testing directly into developer workflows.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">

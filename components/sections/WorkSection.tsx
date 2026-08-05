@@ -9,7 +9,7 @@ const productTags = [
   { name: 'Accreglab', type: 'Project' },
   { name: 'Nexthire', type: 'Product' },
   { name: 'Dimboo', type: 'Project' },
-  { name: 'Everest', type: 'Product' },
+  { name: 'Webmine', type: 'Product' },
   { name: 'eaaasy.de', type: 'Project' },
   { name: 'D2Cguru', type: 'Product' },
   { name: 'Livvy', type: 'Project' },
@@ -97,7 +97,7 @@ export default function WorkSection() {
             </div>
 
             <p className="mt-5 text-[15px] leading-[1.85] text-[#586177]">
-              Leading product execution across SaaS platforms including Vepaar, Pagemaker, Nexthire, and Everest, driving initiatives from discovery to delivery through research, collaboration, and Agile execution.
+              Leading product execution across SaaS platforms including Vepaar, Pagemaker, Nexthire, and Webmine, driving initiatives from discovery to delivery through research, collaboration, and Agile execution.
             </p>
 
             {/* ── Slider ── */}

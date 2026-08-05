@@ -124,7 +124,7 @@ export default function AboutSection() {
                 </p>
 
                 <p>
-                  I&apos;ve worked across products like Vepaar, Pagemaker, Nexthire, Everest, and D2Cguru, contributing from feature ideation to release. My strength is combining product thinking, QA discipline, and cross-functional collaboration to ship quality products users love.
+                  I&apos;ve worked across products like Vepaar, Pagemaker, Nexthire, Webmine, and D2Cguru, contributing from feature ideation to release. My strength is combining product thinking, QA discipline, and cross-functional collaboration to ship quality products users love.
                 </p>
               </div>
             </div>

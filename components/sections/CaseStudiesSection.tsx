@@ -35,7 +35,7 @@ const caseStudies = [
     metric: { label: 'Shortlist Time', value: '-85%' },
   },
   {
-    eyebrow: 'Everest · Platform · Performance',
+    eyebrow: 'Webmine · Platform · Performance',
     title: 'Improving Product Quality with QA Strategy & Automation',
     description:
       'Introduced structured QA processes and automation testing to reduce production defects. Strengthened release cycles, improved system reliability, and ensured consistent product quality across web and mobile platforms.',
@@ -43,8 +43,8 @@ const caseStudies = [
     accent: '#14b8a6',
     bg: 'rgba(20,184,166,0.05)',
     tags: ['QA Strategy', 'Automation', 'Reliability', 'Performance'],
-    href: '/case-studies/everest',
-    productUrl: 'https://everest.app',
+    href: '/case-studies/webmine',
+    productUrl: 'https://webmine.app',
     comingSoon: true,
     metric: { label: 'Defect Rate', value: '-52%' },
   },
@@ -227,7 +227,7 @@ export default function CaseStudiesSection() {
                       </Link>
                     )}
 
-                    {study.productUrl && (
+                    {!study.comingSoon && study.productUrl && (
                       <a
                         href={study.productUrl}
                         target="_blank"
