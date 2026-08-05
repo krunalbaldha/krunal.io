@@ -71,7 +71,7 @@ export default function MonziCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-2.5">
+          <div className="mt-6 flex flex-wrap items-center gap-2.5">
             {['React', 'Next.js', 'PostgreSQL', 'Secure Auth', 'Tailwind CSS'].map((tag) => (
               <span
                 key={tag}
@@ -81,6 +81,22 @@ export default function MonziCaseStudy() {
                 {tag}
               </span>
             ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href="https://monzi.krunal.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#6366f1] hover:bg-[#4f46e5] text-white px-6 py-2.5 text-[13.5px] font-semibold shadow-md transition-all duration-300 hover:scale-[1.02]"
+            >
+              View Product
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -362,6 +378,16 @@ export default function MonziCaseStudy() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8]">Framework</span>
                   <p className="mt-1.5 text-[#18233f] font-semibold text-[15px]">Next.js Framework</p>
                 </div>
+                <div className="pt-2 border-t border-slate-200/50">
+                  <a
+                    href="https://monzi.krunal.site"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#6366f1] hover:bg-[#4f46e5] text-white py-2.5 text-[13px] font-semibold shadow-sm transition-all duration-300 hover:scale-[1.02]"
+                  >
+                    View Product ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -372,10 +398,10 @@ export default function MonziCaseStudy() {
           <div className="rounded-[24px] p-6 sm:p-8 glass-card-strong border border-white/60 shadow-sm flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-left">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#94a3b8]">Next Case Study</span>
-              <h3 className="mt-1.5 text-[22px] font-bold text-[#18233f] tracking-tight">Voliz SaaS Engagement</h3>
+              <h3 className="mt-1.5 text-[22px] font-bold text-[#18233f] tracking-tight">Vepaar SaaS Growth</h3>
             </div>
             <Link
-              href="/case-studies/voliz"
+              href="/case-studies/vepaar"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6366f1] hover:bg-[#4f46e5] text-white px-8 py-3.5 text-[14px] font-semibold shadow-md transition duration-300 hover:-translate-y-0.5"
             >
               Read Next Case Study →

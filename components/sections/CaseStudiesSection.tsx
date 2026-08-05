@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const caseStudies = [
   {
@@ -16,21 +16,23 @@ const caseStudies = [
     bg: 'rgba(99,102,241,0.06)',
     tags: ['Personal Finance', 'Budget Automation', 'Financial Analytics', 'Fintech'],
     href: '/case-studies/monzi',
+    productUrl: 'https://monzi.krunal.site',
     comingSoon: false,
     metric: { label: 'Query Latency', value: 'Sub-ms' },
   },
   {
-    eyebrow: 'Voliz · SaaS · Engagement',
-    title: 'Increasing User Engagement through Data-Driven Product Decisions',
+    eyebrow: 'NextHire AI · AI & Talent Automation',
+    title: 'AI Resume Screening, ATS Matching & Semantic Retrieval',
     description:
-      'Leveraged product analytics and user behavior insights to identify drop-offs and optimize user journeys. Implemented data-backed improvements that enhanced engagement, usability, and overall product experience.',
+      'Leveraged rule-based ATS matching, intelligent parsing workflows, and FAISS vector search to streamline candidate evaluation, cutting shortlist time by 85% with 94% search precision.',
     image: '/images/blogs/NextHire.png',
-    accent: '#ec4899',
-    bg: 'rgba(236,72,153,0.05)',
-    tags: ['Product Analytics', 'User Behavior', 'Engagement', 'UX'],
-    href: '/case-studies/voliz',
-    comingSoon: true,
-    metric: { label: 'Engagement', value: '+28%' },
+    accent: '#6366f1',
+    bg: 'rgba(99,102,241,0.06)',
+    tags: ['AI Screening', 'FAISS Vector Search', 'ATS Matching', 'Semantic AI'],
+    href: '/case-studies/nexthire',
+    productUrl: 'https://nexthire.krunal.site',
+    comingSoon: false,
+    metric: { label: 'Shortlist Time', value: '-85%' },
   },
   {
     eyebrow: 'Everest · Platform · Performance',
@@ -42,36 +44,15 @@ const caseStudies = [
     bg: 'rgba(20,184,166,0.05)',
     tags: ['QA Strategy', 'Automation', 'Reliability', 'Performance'],
     href: '/case-studies/everest',
+    productUrl: 'https://everest.app',
     comingSoon: true,
     metric: { label: 'Defect Rate', value: '-52%' },
   },
-
-  // {
-  //   eyebrow: 'DateDish · Social · Dating',
-  //   title: 'Improving Product Quality with QA Strategy & Automation',
-  //   description:
-  //     'Introduced structured QA processes and automation testing to reduce production defects. Strengthened release cycles, improved system reliability, and ensured consistent product quality across web and mobile platforms.',
-  //   image: '/images/blogs/4.png',
-  //   accent: '#14b8a6',
-  //   bg: 'rgba(20,184,166,0.05)',
-  //   tags: ['QA Strategy', 'Automation', 'Reliability', 'Performance'],
-  //   href: '/case-studies/everest',
-  //   comingSoon: true,
-  //   metric: { label: 'Defect Rate', value: '-52%' },
-  // },
 ] as const;
 
 export default function CaseStudiesSection() {
   const [active, setActive] = useState(0);
   const study = caseStudies[active];
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActive((prev) => (prev + 1) % caseStudies.length);
-    }, 4200);
-
-    return () => window.clearInterval(timer);
-  }, []);
 
   const goPrev = () => {
     setActive((prev) => (prev === 0 ? caseStudies.length - 1 : prev - 1));
@@ -88,10 +69,10 @@ export default function CaseStudiesSection() {
         <div className="mb-6 flex items-end justify-between">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6f8cff]">
-              Case Studies
+              Projects & Case Studies
             </p>
             <h2 id="case-studies-heading" className="mt-3 text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-[#18233f] sm:text-[36px] md:text-[42px]">
-              Featured Case Studies
+              Projects & Case Studies
             </h2>
             <p className="mt-3 max-w-[560px] text-[15px] leading-[1.8] text-[#5b657c]">
               A curated set of work showcasing how I approach complex problems,
@@ -171,7 +152,13 @@ export default function CaseStudiesSection() {
                   </div>
 
                   <h3 className="mt-3 max-w-[440px] text-[21px] font-semibold leading-[1.18] tracking-[-0.025em] text-[#1d2333] sm:text-[23px] lg:text-[25px]">
-                    {study.title}
+                    {!study.comingSoon ? (
+                      <Link href={study.href} className="hover:underline hover:text-[#3d5aff] transition-colors">
+                        {study.title}
+                      </Link>
+                    ) : (
+                      study.title
+                    )}
                   </h3>
 
                   <p className="mt-3 max-w-[440px] text-[14px] leading-[1.75] text-[#5f6678]">
@@ -216,28 +203,46 @@ export default function CaseStudiesSection() {
                     ))}
                   </div>
 
-                  {/* CTA */}
-                  {study.comingSoon ? (
-                    <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200/60 bg-gradient-to-r from-amber-50 to-orange-50 px-4 py-2 text-[13px] font-medium text-amber-600 select-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="8" x2="12" y2="12" />
-                        <line x1="12" y1="16" x2="12.01" y2="16" />
-                      </svg>
-                      Case study coming soon
-                    </div>
-                  ) : (
-                    <Link
-                      href={study.href}
-                      className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold transition hover:gap-2.5"
-                      style={{ color: study.accent }}
-                    >
-                      View Case Study
-                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </Link>
-                  )}
+                  {/* CTA Buttons */}
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    {study.comingSoon ? (
+                      <div className="inline-flex items-center gap-2 rounded-full border border-amber-200/60 bg-gradient-to-r from-amber-50 to-orange-50 px-4 py-2 text-[13px] font-medium text-amber-600 select-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" />
+                          <line x1="12" y1="8" x2="12" y2="12" />
+                          <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        Case study coming soon
+                      </div>
+                    ) : (
+                      <Link
+                        href={study.href}
+                        className="inline-flex items-center gap-1.5 rounded-full px-4.5 py-2.5 text-[13.5px] font-semibold text-white shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
+                        style={{ backgroundColor: study.accent }}
+                      >
+                        View Case Study
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                    )}
+
+                    {study.productUrl && (
+                      <a
+                        href={study.productUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/90 px-4.5 py-2.5 text-[13.5px] font-semibold text-[#3b4a6b] shadow-sm transition-all duration-200 hover:bg-slate-50 hover:text-[#18233f] hover:border-slate-300 hover:scale-[1.02]"
+                      >
+                        View Product
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -296,14 +301,27 @@ export default function CaseStudiesSection() {
                         }}
                       />
                       <div className="relative h-[85%] w-[85%] z-10">
-                        <Image
-                          src={study.image}
-                          alt={study.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 500px"
-                          priority
-                          className="cursor-pointer object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)]"
-                        />
+                        {!study.comingSoon ? (
+                          <Link href={study.href} className="block w-full h-full relative">
+                            <Image
+                              src={study.image}
+                              alt={study.title}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 500px"
+                              priority
+                              className="cursor-pointer object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)] transition duration-300 hover:scale-[1.02]"
+                            />
+                          </Link>
+                        ) : (
+                          <Image
+                            src={study.image}
+                            alt={study.title}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 500px"
+                            priority
+                            className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)]"
+                          />
+                        )}
                       </div>
                     </motion.div>
                   </motion.div>

@@ -57,7 +57,7 @@ export default function EverestCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-2.5">
+          <div className="mt-6 flex flex-wrap items-center gap-2.5">
             {['QA Strategy', 'Automation', 'Reliability', 'Performance'].map((tag) => (
               <span
                 key={tag}
@@ -67,6 +67,22 @@ export default function EverestCaseStudy() {
                 {tag}
               </span>
             ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href="https://everest.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#14b8a6] hover:bg-[#0d9488] text-white px-6 py-2.5 text-[13.5px] font-semibold shadow-md transition-all duration-300 hover:scale-[1.02]"
+            >
+              View Product
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
           </div>
         </div>
 
